@@ -19,23 +19,6 @@ const Wrapper = styled.div`
   .post--tags {
     margin: 15px 0;
   }
-  blockquote {
-    font-style: italic;
-    padding: 10px;
-    margin: 10px;
-    background-image: url(/static/img/startquote.gif);
-    background-position: top left;
-    background-repeat: no-repeat;
-    background-size: 5%;
-    text-indent: 30px;
-  }
-  blockquote p {
-    display: block;
-    background-image: url(/static/img/endquote.gif);
-    background-repeat: no-repeat;
-    background-position: bottom right;
-    background-size: 5%;
-  }
 `
 
 const ProfileImg = styled.img`
@@ -60,19 +43,7 @@ const StyledIcons = withStyles(iconStyles)
 export default () => {
   return (
     <Wrapper>
-      <blockquote>"I know that I know nothing" - Socrates</blockquote>
-      <p>
-        Image you see in header of this website is{' '}
-        <a href="http://harrypotter.wikia.com/wiki/Pensieve">Pensieve</a>. I
-        think that perfectly describes this online space. It serves me as a
-        place to put out stuff I'm thinking about. There are so many things in
-        life you can learn about. I love learning at my own pace. I'm really
-        slow thinker, but enduring one. A long-term strategy to life.
-      </p>
-      <p>
-        I'm currently living in Europe, working as a software engineer, doing
-        stuff with VR on the web.
-      </p>
+      <p>QuestSpace is a physical space in heart of Košice, Slovakia.</p>
       <p>
         Content on this site is{' '}
         <a href="https://creativecommons.org/publicdomain/zero/1.0/">
@@ -85,13 +56,6 @@ export default () => {
       <div className="about--social">
         <a
           className="about-social-link"
-          href="https://facebook.com/michaltakacdesign/"
-          target="_blank"
-        >
-          <StyledIcons.Facebook alt="Facebook" />
-        </a>
-        <a
-          className="about-social-link"
           href="https://twitter.com/michaltakac/"
           target="_blank"
         >
@@ -99,24 +63,10 @@ export default () => {
         </a>
         <a
           className="about-social-link"
-          href="https://github.com/michaltakac/"
+          href="https://github.com/questspace/"
           target="_blank"
         >
           <StyledIcons.Github alt="GitHub" />
-        </a>
-        <a
-          className="about-social-link"
-          href="https://pinterest.com/michaltakac/"
-          target="_blank"
-        >
-          <StyledIcons.Pinterest alt="Pinterest" />
-        </a>
-        <a
-          className="about-social-link"
-          href="https://www.goodreads.com/michaltakac/"
-          target="_blank"
-        >
-          <StyledIcons.Goodreads alt="Goodreads" />
         </a>
       </div>
     </Wrapper>

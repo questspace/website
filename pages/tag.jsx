@@ -1,18 +1,15 @@
 import React from 'react'
 import Link from 'next/link'
+import { withRouter } from 'next/router'
 import PostLink from '../components/PostLink'
 import posts from '../utils/posts'
 
-export default ({
-  url: {
-    query: { tag }
-  }
-}) => (
+export default withRouter(({ router: { query: { tag } } }) => (
   <div>
-    <Link href="/">
+    <Link href="/blog">
       <a>Home</a>
     </Link>
-    <h1>{`${tag.charAt(0).toUpperCase()}${tag.substring(1)}`}</h1>
+    <h1>{`Tag: "${tag.charAt(0).toUpperCase()}${tag.substring(1)}"`}</h1>
     {posts
       .filter(post => post.tags && post.tags.includes(tag))
       .map(post => (
@@ -27,4 +24,4 @@ export default ({
         />
       ))}
   </div>
-)
+))

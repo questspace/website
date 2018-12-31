@@ -113,7 +113,7 @@ export default class extends React.Component {
         className="post"
       >
         <header>
-          <Link href={`/blog/${slug}`}>
+          <Link href={`/blog/${date}/${slug}`}>
             <a>
               <h2 itemProp="headline" className="post--title">
                 {title}

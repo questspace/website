@@ -68,11 +68,9 @@ export default () => (
   <Header className="header">
     <Head />
     <div id="q-logo" className="header--hero">
-      <Link href="/">
-        <a>
-          <QLogo src="/static/img/q-logo.svg" />
-        </a>
-      </Link>
+      <a href="/">
+        <QLogo src="/static/img/q-logo.svg" />
+      </a>
     </div>
     <div className="header--links">
       <StyledLink href="/about">
