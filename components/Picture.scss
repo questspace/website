@@ -1,0 +1,21 @@
+$kosice: '/static/img/quest_web_drawing_1920px.jpg';
+$light: '/static/img/light_1920px.png';
+
+.pic {
+  background: url($kosice) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.lightBlend {
+  background: url($light) no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 1200px;
+  margin: 0 auto;
+  background-position: center;
+  mix-blend-mode: color-dodge;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
