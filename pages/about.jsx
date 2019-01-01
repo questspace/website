@@ -43,15 +43,21 @@ const StyledIcons = withStyles(iconStyles)
 export default () => {
   return (
     <Wrapper>
-      <p>QuestSpace is a physical space in heart of Košice, Slovakia.</p>
       <p>
+        QuestSpace is a physical space located in the heart of Košice, Slovakia.
+      </p>
+      <p>
+        Currently, it serves as a personal hackerspace. Let's see if that would
+        make sense.
+      </p>
+      {/*<p>
         Content on this site is{' '}
         <a href="https://creativecommons.org/publicdomain/zero/1.0/">
           unlicensed
         </a>
         . If you cited something or shared and linked back - that's great, thank
         you! If not, that's great too! Hope your readers loved it.
-      </p>
+      </p>*/}
 
       <div className="about--social">
         <a

@@ -10,9 +10,9 @@ const getParams = (page, value) => ({
 const defaultRoutes = {
   '/': { page: '/index' },
   '/blog': { page: '/blog' },
-  '/about': { page: '/about' },
-  '/experiments': { page: '/experiments' },
-  '/help': { page: '/help' }
+  '/about': { page: '/about' }
+  // '/experiments': { page: '/experiments' },
+  // '/help': { page: '/help' }
 }
 
 const routes = (defaults = defaultRoutes) =>

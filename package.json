@@ -10,6 +10,7 @@
     "export": "next export",
     "static": "next build && next export",
     "serve:static": "npm run static && serve ./out",
+    "now-build": "npm run static",
     "deploy": "npm run static && cd out && now",
     "analyze:browser": "BUNDLE_ANALYZE=browser npm run build",
     "analyze:backend": "BUNDLE_ANALYZE=server npm run build",

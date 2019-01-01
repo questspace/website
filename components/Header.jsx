@@ -52,15 +52,18 @@ const Header = styled.header`
 
 const QLogo = styled.img`
   width: 64px;
-  padding-left: 25px;
+  padding-left: 10px;
   @media (max-width: ${theme.mediaQueryBig}) {
     width: 64px;
+    padding-left: 10px;
   }
   @media (max-width: ${theme.mediaQueryMedium}) {
     width: 60px;
+    padding-left: 8px;
   }
   @media (max-width: ${theme.mediaQuerySmall}) {
     width: 55px;
+    padding-left: 7px;
   }
 `
 
@@ -76,7 +79,7 @@ export default () => (
       <StyledLink href="/about">
         <a>{'wtf'}</a>
       </StyledLink>
-      <StyledLink href="/blog">
+      {/*<StyledLink href="/blog">
         <a>{'words & sentences'}</a>
       </StyledLink>
       <StyledLink href="/experiments">
@@ -84,7 +87,7 @@ export default () => (
       </StyledLink>
       <StyledLink href="/help">
         <a>{'pay my bills'}</a>
-      </StyledLink>
+</StyledLink>*/}
     </div>
   </Header>
 )
