@@ -7,6 +7,9 @@ import theme from '../utils/theme'
 const fadeInAnimation = keyframes`${fadeIn}`
 
 const Wrapper = styled.div`
+  p {
+    text-align: center;
+  }
   .about--social {
     text-align: center;
   }
@@ -45,24 +48,31 @@ export default () => {
     <Wrapper>
       <p>
         QuestSpace is a physical space located in the heart of Košice, Slovakia.
+        <br />
+        It serves as a hackerspace, makerspace, research workspace and studio.
+        <br />
       </p>
+
       <p>
-        Currently, it serves as a personal hackerspace. Let's see if that would
-        make sense.
+        We operate as a self-governing micro-community, programmatically
+        governed by{' '}
+        <a
+          href="https://en.wikipedia.org/wiki/Decentralized_autonomous_organization"
+          target="_blank"
+        >
+          DAO
+        </a>{' '}
+        (Decentralized Autonomous Organization).
+        Our DAO is build on top of{' '}
+        <a href="https://hack.aragon.org/" target="_blank">
+          AragonOS
+        </a>.
       </p>
-      {/*<p>
-        Content on this site is{' '}
-        <a href="https://creativecommons.org/publicdomain/zero/1.0/">
-          unlicensed
-        </a>
-        . If you cited something or shared and linked back - that's great, thank
-        you! If not, that's great too! Hope your readers loved it.
-      </p>*/}
 
       <div className="about--social">
         <a
           className="about-social-link"
-          href="https://twitter.com/michaltakac/"
+          href="https://twitter.com/questalion/"
           target="_blank"
         >
           <StyledIcons.Twitter alt="Twitter" />

@@ -10,15 +10,17 @@ const getParams = (page, value) => ({
 const defaultRoutes = {
   '/': { page: '/index' },
   '/blog': { page: '/blog' },
-  '/about': { page: '/about' }
+  '/about': { page: '/about' },
+  '/partners': { page: '/partners' },
   // '/experiments': { page: '/experiments' },
   // '/help': { page: '/help' }
+  '/posts/dimensionlab-meets-questspace': { page: '/posts/dimensionlab-meets-questspace.mdx' }
 }
 
 const routes = (defaults = defaultRoutes) =>
   posts.reduce((routes, post) => {
     const postRoutes = Object.assign(routes, {
-      [`/blog/${post.date}/${post.slug}`]: getParams('blog', post.slug)
+      [`/posts/${post.slug}`]: getParams('posts', post.slug)
     })
     const tags = post.tags || []
     return tags.reduce(

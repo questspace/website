@@ -1,0 +1,63 @@
+import Link from 'next/link'
+import Layout from '../../components/Layout'
+import PostLayout from '../../components/PostLayout'
+import config from '../../config'
+
+export const meta = {
+  title: 'DimensionLab meets QuestSpace',
+  slug: 'dimensionlab-meets-questspace',
+  date: '2019-06-26',
+  author: 'Michal Takac',
+  draft: false,
+  tags: ['projects'],
+  excerpt:
+"Since I've moved to the new office space in May last year, the idea from the beginning was to build a space not only for myself but also for other people who are into various things... Read more"
+}
+
+export default ({ children }) => (
+  <Layout isBlogpost>
+    <PostLayout {...meta}>{children}</PostLayout>
+  </Layout>
+)
+
+Since I've moved to the new office space in May last year, the idea from the beginning was to build a space not only for myself but also for other people who are into various things. Significant part of the space is dedicated to research and work with new media. One of the most interesting stuff for me during the last 5 years was seeing the move of virtual and augmented reality into mainstream and all the progress in hardware departments of many companies building headsets, 6DoF tracking devices and sensors for mapping the environment. Working at [Decentraland](https://decentraland.org/) also taught me many crypto-related "tricks" and new ways of how communities, small and big, can self-govern themselves without any central authorities (apart from programming game engines, CLI tools and creating VR experiences).
+
+
+> Media matter because media are our thinking tools. The representations that we use of the system are how we think about it. Our representations are how we understand the system and what we understand about it. And so if we want powerful new ways of understanding complex systems, or if we want to build powerful new systems, we need powerful new representations. And we need a powerful new medium with which we can create and work with those representations. <sup><Link href="#sources-1"><a>1</a></Link></sup>
+
+
+Some time ago, together with my friend [Maroš](https://www.facebook.com/maros.majky), we started [DimensionLab](https://github.com/dimensionlab) - a small initiative to explore possibilities of VR and AR - mostly on the web. At the time, we didn't have dedicated place to meet and also didn't have money to bootstrap it, so we spent time hacking on various side projects for fun. He then moved to Denmark to attend university. From what I've seen and heard, it goes really great!
+
+The goal was also to build a small R&D community around VR/AR (in part also focused on creating commercial products and experiences) in Košice, so today I'm making next step in laying out my vision for the DimensionLab. **I'm bootstrapping the lab with small budget of ~$2,500 (5 ETH and 1000 DAI) and will be initiating a crowdfunding in September 2019 for another $2500 (in crypto or fiat), which I'll match dollar-for-dollar received**. So the **initial funding for DimensionLab should get to around $7500**. Of course, this is not much. We can't pay full salaries with this money from the start, but definitely can acquire needed hardware for prototyping. We have to start somewhere.
+
+<div style={{ textAlign: "center", width: "100%" }}>
+<img src="/static/img/blog-img/dimensionlab-meets-questspace/initial-funding-crypto.jpg" alt="" width="300px" /><br />
+<span style={{ fontWeight: 100, fontSize: "0.8rem", color: config.theme.colors.accent }}>Fig. 1: Small initial funding</span>
+</div>
+
+It will operate as a **<a href="https://en.wikipedia.org/wiki/Decentralized_autonomous_organization" target="_blank">Decentralized Autonomous Organization (DAO)</a>**, which will also govern an **24/7 access to QuestSpace for every member of the DimensionLab, programmatically**. This way, whenever you'll get an idea for something and want to use the tools available at the QuestSpace, being it 3D printer, HTC Vive, Oculus Go or soldering kit, you'll just open the door and _do your thing_.
+
+DimensionLab will have full access to tools in QuestSpace. We will also receive two **<a href="https://developer.leapmotion.com/northstar" target="_blank">Project North Star</a>** (prototype of AR headset) kits, which I'm really excited for and looking into building _together with you_. Physical parts for it will be 3D printed by myself.
+
+<div style={{ textAlign: "center", width: "100%" }}>
+<img src="/static/img/blog-img/dimensionlab-meets-questspace/polaris-ar.jpg" alt="" width="70%" /><br />
+<span style={{ fontWeight: 100, fontSize: "0.8rem", color: config.theme.colors.accent }}>Fig. 2: Polaris AR is a kit for building "Project North Star" AR headset from Leap Motion</span>
+</div>
+
+
+> In science, if you know what you are doing, you should not be doing it. In engineering, if you do not know what you are doing, you should not be doing it. <sup><Link href="#sources-2"><a>2</a></Link></sup>
+
+
+We will be focused not only on working with and researching use cases of VR and AR, but also digging into holography and what can be (and is needed to be) done to throw big headsets out of the window and see virtual stuff with our _plain monkey eyes_.
+
+
+> With the eye, the hand is our main source of contact with the physical environment. The hand has advantages over the eye because it can observe the environment by means of touch, and having observed it, it can immediately proceed to do something about it. <sup><Link href="#sources-3"><a>3</a></Link></sup>
+
+
+If you are interested in helping me bootstrap DimensionLab and want to get your hands dirty with interesting projects (better if you have something in mind that you want to work on), **do <a href="mailto:hello@michaltakac.com">get in touch</a>!** I'm also on Twitter (<a href="https://twitter.com/michaltakac" target="_blank">@michaltakac</a>) and <a href="https://www.facebook.com/michaltakacdesign" target="_blank">Facebook</a>.
+
+---
+
+1. [Victor, B.: "Media for Thinking The Unthinkable"](http://worrydream.com/MediaForThinkingTheUnthinkable/) [2013] <span id="sources-1" />
+2. [Hamming, R. W.: "Art of Doing Science and Engineering: Learning to Learn"](http://worrydream.com/MediaForThinkingTheUnthinkable/) [1997] ISBN 978-9056995003 <span id="sources-2" />
+3. [Napier, J.: "Hands"](https://www.amazon.com/dp/0691025479) [1993] ISBN 978-0691025476 <span id="sources-3" />

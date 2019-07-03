@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import { withRouter } from 'next/router'
 import Head from 'next/head'
 import theme from '../utils/theme'
 import styled from 'styled-components'
@@ -48,6 +49,9 @@ const Header = styled.header`
       width: 240px;
     }
   }
+  .active-link {
+    color: black;
+  }
 `
 
 const QLogo = styled.img`
@@ -67,7 +71,7 @@ const QLogo = styled.img`
   }
 `
 
-export default () => (
+export default withRouter(({ router }) => (
   <Header className="header">
     <Head />
     <div id="q-logo" className="header--hero">
@@ -76,12 +80,16 @@ export default () => (
       </a>
     </div>
     <div className="header--links">
-      <StyledLink href="/about">
-        <a>{'wtf'}</a>
+      <StyledLink href="/about" routerPathname={router.pathname}>
+        <a className={router.pathname.includes("/about") ? "active-link" : ""}>{'wtf'}</a>
       </StyledLink>
-      {/*<StyledLink href="/blog">
-        <a>{'words & sentences'}</a>
+      <StyledLink href="/blog" routerPathname={router.pathname}>
+        <a className={router.pathname.includes("/blog") ? "active-link" : ""}>{'words & sentences'}</a>
       </StyledLink>
+      <StyledLink href="/partners" routerPathname={router.pathname}>
+        <a className={router.pathname.includes("/partners") ? "active-link" : ""}>{'partners'}</a>
+      </StyledLink>
+      {/*
       <StyledLink href="/experiments">
         <a>{'experiments'}</a>
       </StyledLink>
@@ -90,4 +98,4 @@ export default () => (
 </StyledLink>*/}
     </div>
   </Header>
-)
+))

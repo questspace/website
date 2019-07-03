@@ -15,6 +15,9 @@ const Article = styled.article`
   font-family: 'Lora', serif;
   margin: 0;
   animation: 0.7s ${fadeInAnimation};
+  section: {
+    margin: 5px 0;
+  }
   .post--tags {
     margin: 15px 0;
   }
@@ -69,8 +72,9 @@ export default class extends React.Component {
   }
 
   componentDidMount() {
-    !this.props.excerpt && require('intersection-observer')
-    window.addEventListener('resize', this.handleResizing)
+    console.log(this.props.excerpt)
+    // !this.props.excerpt && require('intersection-observer')
+    // window.addEventListener('resize', this.handleResizing)
 
     this.setState({ distanceFromLeft: this.distanceFromLeft() })
   }
@@ -83,7 +87,7 @@ export default class extends React.Component {
     const fullWidth = window.innerWidth
     const articleWidth = document.querySelector('article').clientWidth
     const sliderNavWidth = document.getElementById('slider-nav').clientWidth
-    const distanceFromLeft = (fullWidth - articleWidth) / 2 - sliderNavWidth
+    const distanceFromLeft = (fullWidth - articleWidth) / 2 - sliderNavWidth - 10
 
     return distanceFromLeft
   }
@@ -147,7 +151,7 @@ export default class extends React.Component {
               </div>
             </LeftBottomNav>
           </ScrollPercentage>
-          <footer className="post--tags">
+          <section className="post--tags">
             <small>
               <span>Tags: </span>
               {this.props.tags.map((tag, index) => (
@@ -159,14 +163,14 @@ export default class extends React.Component {
                 </span>
               ))}
             </small>
-          </footer>
-          <footer className="post--info">
+          </section>
+          <section className="post--info">
             <span>
               <time itemProp="datePublished" dateTime={date}>
                 {distanceInWordsToNow(date, { addSuffix: true })}
               </time>
             </span>
-          </footer>
+          </section>
         </header>
         {this.props.children}
       </Article>
