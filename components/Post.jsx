@@ -72,9 +72,8 @@ export default class extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.props.excerpt)
     // !this.props.excerpt && require('intersection-observer')
-    // window.addEventListener('resize', this.handleResizing)
+    window.addEventListener('resize', this.handleResizing)
 
     this.setState({ distanceFromLeft: this.distanceFromLeft() })
   }
