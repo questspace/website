@@ -1,8 +1,8 @@
 module.exports = [
   {
-    title: 'Developers See Developers Do',
-    slug: 'developers-see-developers-do',
-    date: '2017-10-06',
-    tags: ['programming']
+    title: 'DimensionLab meets QuestSpace',
+    slug: 'dimensionlab-meets-questspace',
+    date: '2019-06-23',
+    tags: ['projects', 'AR', 'VR', 'XR']
   }
 ]

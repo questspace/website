@@ -64,7 +64,7 @@ function readPostMetadata(postPath) {
 function generateRSS(posts) {
   const siteUrl = 'https://ncanscnasncanscjnansdc.now.sh'
   const feed = new RSS({
-    title: 'My blog',
+    title: 'QuestSpace - Blog',
     site_url: siteUrl
   })
   posts.map(post => {

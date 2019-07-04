@@ -16,6 +16,9 @@ const Article = styled.article`
   .post--tags {
     margin: 15px 0;
   }
+  .info-section: {
+    margin: 5px 0;
+  }
   blockquote {
     font-style: italic;
     padding: 10px;
@@ -41,7 +44,7 @@ const LeftBottomNav = styled.div`
     rgba(255, 255, 255, 1),
     rgba(255, 255, 255, 0.96)
   );
-  padding: 10px 50px 50px 100px;
+  padding: 10px 20px 20px 50px;
   position: fixed;
   left: 50px;
   bottom: 50px;
@@ -54,45 +57,8 @@ const LeftBottomNav = styled.div`
 `
 
 export default class extends React.Component {
-  constructor(...args) {
-    super(...args)
-
-    this.state = {
-      percentage: null,
-      distanceFromLeft: 50
-    }
-
-    this.handleReadingStatus = this.handleReadingStatus.bind(this)
-    this.handleResizing = this.handleResizing.bind(this)
-  }
-
   componentDidMount() {
     !this.props.excerpt && require('intersection-observer')
-    window.addEventListener('resize', this.handleResizing)
-
-    this.setState({ distanceFromLeft: this.distanceFromLeft() })
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.handleResizing)
-  }
-
-  distanceFromLeft = () => {
-    const fullWidth = window.innerWidth
-    const articleWidth = document.querySelector('article').clientWidth
-    const sliderNavWidth = document.getElementById('slider-nav').clientWidth
-    const distanceFromLeft = (fullWidth - articleWidth) / 2 - sliderNavWidth
-
-    return distanceFromLeft
-  }
-
-  handleResizing(event) {
-    this.setState({ distanceFromLeft: this.distanceFromLeft() })
-  }
-
-  handleReadingStatus(percentage) {
-    const value = Math.floor((5.234242).toPrecision(5) * 100)
-    this.setState({ percentage: value < 30 ? 0 : value })
   }
 
   render() {
@@ -113,42 +79,14 @@ export default class extends React.Component {
         className="post"
       >
         <header>
-          <Link href={`/blog/${date}/${slug}`}>
+          <Link href={`/posts/${slug}`}>
             <a>
               <h2 itemProp="headline" className="post--title">
                 {title}
               </h2>
             </a>
           </Link>
-          <ScrollPercentage
-            threshold={1}
-            onChange={state => this.handleReadingStatus(state.percentage)}
-          >
-            <LeftBottomNav
-              id="slider-nav"
-              percentage={this.state.percentage}
-              style={{ left: this.state.distanceFromLeft }}
-            >
-              <a onClick={() => animateScrollTo(0)}>
-                <div>
-                  <br />
-                  {'to the top'}
-                </div>
-              </a>
-              {pageTitle !== 'home' && (
-                <div>
-                  <br />
-                  <Link href="/blog">
-                    <a className="home-link">
-                      <br />
-                      {'home'}
-                    </a>
-                  </Link>
-                </div>
-              )}
-            </LeftBottomNav>
-          </ScrollPercentage>
-          <footer className="post--tags">
+          <section className="post--tags info-section">
             <small>
               <span>Tags: </span>
               {tags.map((tag, index) => (
@@ -160,16 +98,16 @@ export default class extends React.Component {
                 </span>
               ))}
             </small>
-          </footer>
-          <footer className="post--info">
+          </section>
+          <section className="post--info info-section">
             <span>
               <time itemProp="datePublished" dateTime={date}>
                 {distanceInWordsToNow(date, { addSuffix: true })}
               </time>
             </span>
-          </footer>
+          </section>
         </header>
-        <div className="post--body">{excerpt}</div>
+        <div className="post--body"><Link href={`/posts/${slug}`}>{excerpt}</Link></div>
       </Article>
     )
   }

@@ -38,7 +38,7 @@ export default props => (
       <meta name="twitter:title" content={props.title} />
       <meta
         name="twitter:description"
-        content="Online Pensieve containing thoughts of Michal Takac"
+        content="QuestSpace Hackerspace"
       />
       <meta name="twitter:creator" content="@michaltakac" />
 
@@ -47,18 +47,18 @@ export default props => (
       <meta property="og:type" content="article" />
       <meta
         property="og:url"
-        content={`https://michaltakac.com/post/${props.slug}`}
+        content={`https://quest.space/posts/${props.slug}`}
       />
       <meta
         property="og:description"
-        content="Online Pensieve containing thoughts of Michal Takac"
+        content="QuestSpace Hackerspace"
       />
       <meta property="og:site_name" content={config.siteName} />
     </Head>
     <Post {...props}>{props.children}</Post>
 
     <SocialShareButtons
-      url={`https://michaltakac.com/post/${props.slug}`}
+      url={`https://quest.space/posts/${props.slug}`}
       title={props.title}
     />
 
